@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+mkdir -p /config/minecraft
+chmod --recursive a+w /config/minecraft
+cd /config/minecraft
+
+JAVA_XMS=$(cat /etc/container_environment/JAVA_XMS)
+JAVA_XMX=$(cat /etc/container_environment/JAVA_XMX)
+JAVA_OPTS="-Xms${JAVA_XMS} -Xmx${JAVA_XMX} $(cat /etc/container_environment/JAVA_OPTS)"
+
+exec setuser system java ${JAVA_OPTS} -jar /app/server.jar
