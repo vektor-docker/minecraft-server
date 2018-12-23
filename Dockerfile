@@ -1,4 +1,4 @@
-FROM javister-docker-docker.bintray.io/javister/javister-docker-openjdk:1.0.java8
+FROM javister-docker-docker.bintray.io/javister/javister-docker-openjdk:1.1.java8
 MAINTAINER Viktor Verbitsky <vektory79@gmail.com>
 
 ARG SERVER_URL
